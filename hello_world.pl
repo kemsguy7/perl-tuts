@@ -19,3 +19,13 @@ print $animal;
 print "The animal is $animal\n";
 print "The square of  $answer is ", $answer * $answer , "\n"; 
 
+#arrays
+my @animals = ("dog", "cat", "rat");
+
+#arrays are zero indexed
+print $animals[1] . "\n";
+
+print "Last of element of the array is :" .  $animals[$#animals] . "\n";  
+
+print @animals; 
+
