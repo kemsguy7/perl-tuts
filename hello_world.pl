@@ -31,7 +31,15 @@ print @animals;
 
 
 #getting multiple values from an array
-print @animals[0,1] . "/n";
-print @animals[0..2] . "/n"; 
-print @animals[1..$#animals] . "/n";   #gives all except the first element
+print @animals[0,1] . "\n";
+print @animals[0..2] . "\n"; 
+print @animals[1..$#animals] . "\n";   #gives all except the first element
 
+my @sorted = sort @animals; 
+print @sorted;
+
+#hashes (associative arrays[key : value pairs])
+my %fruit_color  = ( 
+    apple => "red",
+    banana => "yellow",
+)
