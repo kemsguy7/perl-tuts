@@ -29,3 +29,9 @@ print "Last of element of the array is :" .  $animals[$#animals] . "\n";
 
 print @animals; 
 
+
+#getting multiple values from an array
+print @animals[0,1] . "/n";
+print @animals[0..2] . "/n"; 
+print @animals[1..$#animals] . "/n";   #gives all except the first element
+
