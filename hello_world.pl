@@ -69,13 +69,11 @@ my $variables =  {
 
 print "Scalars begin with a $variables->{'scalar'}->{'sigil'}\n";
 
-
 #if statements The traditional way
 my $zippy = 0;
 # if ($zippy) {
 #   print "Wow!"; 
 # }
-
 
 #if statments the perlish post conditional way
 my $apples = "";
