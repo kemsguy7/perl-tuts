@@ -67,3 +67,12 @@ my $variables =  {
          
 
 }
+
+#using foreach
+foreach (@array) {
+    print "This element is $_ \n";
+    
+}
+
+#working with files 
+open (my $in, "<", "input.txt") or die "Can't open input.txt: $!";
