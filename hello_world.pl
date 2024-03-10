@@ -43,3 +43,27 @@ my %fruit_color  = (
     apple => "red",
     banana => "yellow",
 )
+
+my @fruits = keys %fruit_color;
+my @colors = values %fruit_color;
+
+print @fruits;
+print sort @colors . "\n";
+
+#nesting list and hashes
+my $variables =  {
+    scalar =>  {
+            description => "single item",
+            sigil => '$',  
+        },
+          array => { 
+            description => "ordered list of items",
+            sigil => '@'
+          },
+          hash =>  {
+            description => "key/value pairs",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+            sigil = '%',
+          }
+         
+
+}
