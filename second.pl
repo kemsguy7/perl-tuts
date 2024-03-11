@@ -36,7 +36,7 @@ print "@var_10\n";
 print "1. \@coins = @coins\n"; 
 
 
-# add one element at the end of the array
+# add one element at the end of the array 
 push(@coins, "Penny");
 print "2. \@coins  = @coins\n";
 
@@ -52,3 +52,12 @@ print "4. \@coins  = @coins\n";
 shift(@coins);
 print "5. \@coins  = @coins\n";
 
+#slicing an array 
+@weekdays = @days[3..5];
+
+@array = (1, 2, 3);
+$array[50] = 4;
+print("@array\n");
+
+$size = scalar @array;
+print (" '\$size = ' . $size  . \n ");
