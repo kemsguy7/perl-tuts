@@ -61,3 +61,4 @@ print("@array\n");
 
 $size = scalar @array;
 print (" '\$size = ' . $size  . \n ");
+
