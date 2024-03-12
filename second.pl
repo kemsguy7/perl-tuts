@@ -85,7 +85,7 @@ print "$string[4]\n"; print "@string\n";
 print "Animals: @animals\n";
 
 # Reset the first index of all the arrays to 1
-$[ = 1;
+# $[ = 1;
 
 print "Animals at \@animals[1]: $animals[1]\n";
 print "Animals at \@animals[2]: $animals[2]\n";
@@ -94,5 +94,14 @@ print "Animals at \@animals[2]: $animals[2]\n";
 $var = (5,4,3,2,1)[4];
 print "value of var = $var\n";
 
-$list = (5,4,3,2,1)[1..3];
+@list = (5,4,3,2,1)[1..3];
 print "value of list = @list\n";
+
+
+#HASHES
+#Extracting Slices
+
+%data = (-JohnPaul => 45, -Lisa => 30, -Kumar => 40);
+@array = @data{-JohnPaul, -Lisa};
+
+print "Array : @array\n";
