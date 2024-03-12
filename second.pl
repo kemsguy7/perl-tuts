@@ -59,7 +59,22 @@ print "5. \@coins  = @coins\n";
 $array[50] = 4;
 print("@array\n");
 
+#getting the size of an array with scalar 
 $size = scalar @array;
-print (" '\$size = ' . $size  . \n ");
+print (" Array size =  $size   \n ");
 
   
+#replacing elements in an array 
+@nums = (1..20);
+print "Before - @nums\n"; 
+
+splice(@nums, 5, 5, 21..25);
+print "After - @nums\n";
+
+
+#splitting arrays
+$var_string = "Rain-Drops-On-Roses-And-Whiskerss";
+@string = split('-', $var_string);
+print "$string[4]\n"; print "@string\n";
+
+
