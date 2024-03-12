@@ -78,3 +78,14 @@ $var_string = "Rain-Drops-On-Roses-And-Whiskerss";
 print "$string[4]\n"; print "@string\n";
 
 
+#using the special variable $[
+
+#define an array
+@animals = qw(dog cat cow ant);
+print "Animals: @animals\n";
+
+# Reset the first index of all the arrays to 1
+$[ = 1;
+
+print "Animals at \@animals[1]: $animals[1]\n";
+print "Animals at \@animals[2]: $animals[2]\n";
