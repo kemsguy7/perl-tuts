@@ -138,3 +138,19 @@ print "3 - Hash size: is $size\n";
 for ( ; ;) { 
     printf "This loop will run forever. \n",
 }
+
+#Operators
+#<=> checks if the value of the operands are equal or not and return -1, 0, or 1 depending on whether the left argument is numerically less that, equal to orgreater that the right argument
+
+#quote - like operators
+# q{}; #Encloses a string with-in single quotes
+# Example - q{abcd} gives 'abcd';
+
+# qq{} - #Encloses a string with -in double quotes
+# Example - qq{abcd} gives "abcd";
+
+# qx{} - #Encloses a string with-in invert quotes 
+# Example - qx{abcd} gives `abcd`
+
+
+
