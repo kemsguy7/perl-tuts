@@ -120,3 +120,16 @@ if (exists($data{'Lisa'})) {
 } else {
     print "I don't know age of lisa\n";
 }
+
+#adding an element to the hash; 
+$data{'Ali', 'ogodo'} = 55;
+@keys = keys %data;
+$size = @keys; 
+print "2 - Hash size: is $size\n";
+
+
+#delete the same element from the hash; 
+delete $data{'Ali'};
+@keys = keys %data;
+$size = @keys;
+print "3 - Hash size: is $size\n"; 
