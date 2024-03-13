@@ -63,7 +63,7 @@ print("@array\n");
 $size = scalar @array;
 print (" Array size =  $size   \n ");
 
-  
+
 #replacing elements in an array 
 @nums = (1..20);
 print "Before - @nums\n"; 
@@ -105,3 +105,7 @@ print "value of list = @list\n";
 @array = @data{-JohnPaul, -Lisa};
 
 print "Array : @array\n";
+
+#extracting keys and values from a hash
+@names = keys %data;
+print "$names[0]\n";
