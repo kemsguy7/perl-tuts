@@ -71,7 +71,6 @@ print "Before - @nums\n";
 splice(@nums, 5, 5, 21..25);
 print "After - @nums\n";
 
-
 #splitting arrays
 $var_string = "Rain-Drops-On-Roses-And-Whiskerss";
 @string = split('-', $var_string);
@@ -133,3 +132,4 @@ delete $data{'Ali'};
 @keys = keys %data;
 $size = @keys;
 print "3 - Hash size: is $size\n"; 
+
