@@ -109,3 +109,14 @@ print "Array : @array\n";
 #extracting keys and values from a hash
 @names = keys %data;
 print "$names[0]\n";
+
+@ages = values %data;
+print "@ages\n";
+
+
+#checking  if key exists
+if (exists($data{'Lisa'})) {
+    print "Lisa is $data{'Lisa'} years old\n";
+} else {
+    print "I don't know age of lisa\n";
+}
