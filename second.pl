@@ -127,9 +127,14 @@ $data{'Ali', 'ogodo'} = 55;
 $size = @keys; 
 print "2 - Hash size: is $size\n";
 
-
 #delete the same element from the hash; 
 delete $data{'Ali'};
 @keys = keys %data;
 $size = @keys;
 print "3 - Hash size: is $size\n"; 
+
+
+#infinite loop 
+for ( ; ;) { 
+    printf "This loop will run forever. \n",
+}
