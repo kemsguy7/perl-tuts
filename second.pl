@@ -135,9 +135,9 @@ print "3 - Hash size: is $size\n";
 
 
 #infinite loop 
-for ( ; ;) { 
-    printf "This loop will run forever. \n",
-}
+# for ( ; ;) { 
+#     printf "This loop will run forever. \n",
+# }
 
 #Operators
 #<=> checks if the value of the operands are equal or not and return -1, 0, or 1 depending on whether the left argument is numerically less that, equal to orgreater that the right argument
@@ -152,5 +152,12 @@ for ( ; ;) {
 # qx{} - #Encloses a string with-in invert quotes 
 # Example - qx{abcd} gives `abcd`
 
+
+#Date and Time
+@months = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
+@days = qw(Sun Mon Tue Wed Thu Fri Sat Sun);
+
+($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
+print "$mday $months[$mon] $days[$wday]\n";
 
 
