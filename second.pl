@@ -1,4 +1,4 @@
-
+#!/usr/local/bin/perl
 #Hash Variables
 
 %data = ('John Paul', 45, 'Lisa', 30, 'Kumar', 40); 
@@ -161,3 +161,11 @@ print "3 - Hash size: is $size\n";
 print "$mday $months[$mon] $days[$wday]\n";
 
 
+#Subroutines
+ #function definition 
+ sub Hello {
+     print "Hello, World!\n";
+ }
+
+ # Function call
+ Hello(); 
