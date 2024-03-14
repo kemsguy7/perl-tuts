@@ -1,4 +1,4 @@
-
+#!/usr/local/bin/perl
 #Hash Variables
 
 %data = ('John Paul', 45, 'Lisa', 30, 'Kumar', 40); 
@@ -126,10 +126,110 @@ $data{'Ali', 'ogodo'} = 55;
 $size = @keys; 
 print "2 - Hash size: is $size\n";
 
-
 #delete the same element from the hash; 
 delete $data{'Ali'};
 @keys = keys %data;
 $size = @keys;
 print "3 - Hash size: is $size\n"; 
 
+
+#infinite loop 
+# for ( ; ;) { 
+#     printf "This loop will run forever. \n",
+# }
+
+#Operators
+#<=> checks if the value of the operands are equal or not and return -1, 0, or 1 depending on whether the left argument is numerically less that, equal to orgreater that the right argument
+
+#quote - like operators
+# q{}; #Encloses a string with-in single quotes
+# Example - q{abcd} gives 'abcd';
+
+# qq{} - #Encloses a string with -in double quotes
+# Example - qq{abcd} gives "abcd";
+
+# qx{} - #Encloses a string with-in invert quotes 
+# Example - qx{abcd} gives `abcd`
+
+
+#Date and Time
+@months = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
+@days = qw(Sun Mon Tue Wed Thu Fri Sat Sun);
+
+($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
+print "$mday $months[$mon] $days[$wday]\n";
+
+
+#Subroutines
+ #function definition 
+ sub Hello {
+     print "Hello, World!\n";
+ }
+
+ # Function call
+ Hello();
+
+ #Average 
+ sub Average { 
+    # get total number of arguments passed
+    $n = scalar(@_);
+    @sum = 0;
+
+    foreach $item (@_) {
+        $sum += $item;
+    }
+    $average = $sum / $n;
+
+    print "Average for the give numbers: $average\n"; 
+ }
+
+# function call
+Average(10, 20, 30); 
+
+
+# DEFERENCING
+$var = 10; 
+
+# Now $r has reference to $var scalae.
+$r = \$var;
+
+# Print value available at the location stored in $r. 
+print "Value of $var is :", $$r, "\n";
+
+ @var = (1, 2, 3);
+ # Now $r has reference to @var array.
+
+ $r = \@var; 
+
+ print "Value of @var is : ", @$r, "\n";
+
+ %var = ('key1' => 10, 'key2' => 20);
+ # Now $r has referecne to var hash. 
+
+ $r = \%var;
+
+ # Print values available at the location stored in $r.
+ print "Value of Hash %var is : ", %$r, "\n";
+
+# PERL FORMAT
+open(DATA, "<file.txt") or die "Couldn't open file file.txt, $!";
+
+while(<DATA>) { 
+    print "$_";
+}
+
+# COPYING FILES
+#open file to read
+open(DATA1, "<file1/txt");
+
+#Open new file to write 
+open(DATA2, ">file2.txt");
+
+
+# Copy data from one file to another. 
+while(<DATA1>) { 
+    print DATA2 $_;
+}
+
+close ( DATA1 );
+close ( DATA2 );
