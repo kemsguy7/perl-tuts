@@ -169,7 +169,7 @@ print "$mday $months[$mon] $days[$wday]\n";
 
  # Function call
  Hello();
- 
+
  #Average 
  sub Average { 
     # get total number of arguments passed
@@ -180,7 +180,7 @@ print "$mday $months[$mon] $days[$wday]\n";
         $sum += $item;
     }
     $average = $sum / $n;
-
+n
     print "Aaverage for the give numbers: $average\n"; 
  }
 
