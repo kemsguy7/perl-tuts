@@ -180,9 +180,34 @@ print "$mday $months[$mon] $days[$wday]\n";
         $sum += $item;
     }
     $average = $sum / $n;
-n
-    print "Aaverage for the give numbers: $average\n"; 
+
+    print "Average for the give numbers: $average\n"; 
  }
 
 # function call
 Average(10, 20, 30); 
+
+
+# DEFERENCING
+$var = 10; 
+
+# Now $r has reference to $var scalae.
+$r = \$var;
+
+# Print value available at the location stored in $r. 
+print "Value of $var is :", $$r, "\n";
+
+ @var = (1, 2, 3);
+ # Now $r has reference to @var array.
+
+ $r = \@var; 
+
+ print "Value of @var is : ", @$r, "\n";
+
+ %var = ('key1' => 10, 'key2' => 20);
+ # Now $r has referecne to var hash. 
+
+ $r = \%var;
+
+ # Print values available at the location stored in $r.
+ print "Value of Hash %var is : ", %$r, "\n";
