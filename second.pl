@@ -211,3 +211,10 @@ print "Value of $var is :", $$r, "\n";
 
  # Print values available at the location stored in $r.
  print "Value of Hash %var is : ", %$r, "\n";
+
+# PERL FORMAT
+open(DATA, "<file.txt") or die "Couldn't open file file.txt, $!";
+
+while(<DATA>) { 
+    print "$_";
+}
