@@ -168,4 +168,21 @@ print "$mday $months[$mon] $days[$wday]\n";
  }
 
  # Function call
- Hello(); 
+ Hello();
+ 
+ #Average 
+ sub Average { 
+    # get total number of arguments passed
+    $n = scalar(@_);
+    @sum = 0;
+
+    foreach $item (@_) {
+        $sum += $item;
+    }
+    $average = $sum / $n;
+
+    print "Aaverage for the give numbers: $average\n"; 
+ }
+
+# function call
+Average(10, 20, 30); 
