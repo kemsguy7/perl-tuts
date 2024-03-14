@@ -7,7 +7,7 @@ print "\$data{'John Paul'} = $data{'John Paul'}\n";
 print "\$data{'Lisa'} = $data{'Lisa'}\n";
 print "\$data{'Kumar'} = $data{'Kumar'}\n";
 
-#variable context
+#variable contex
 
 @names = ('John Paul', 'Lisa', 'Kumar'); 
 
