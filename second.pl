@@ -7,7 +7,7 @@ print "\$data{'John Paul'} = $data{'John Paul'}\n";
 print "\$data{'Lisa'} = $data{'Lisa'}\n";
 print "\$data{'Kumar'} = $data{'Kumar'}\n";
 
-#variable context
+#variable contex
 
 @names = ('John Paul', 'Lisa', 'Kumar'); 
 
@@ -70,7 +70,6 @@ print "Before - @nums\n";
 
 splice(@nums, 5, 5, 21..25);
 print "After - @nums\n";
-
 
 #splitting arrays
 $var_string = "Rain-Drops-On-Roses-And-Whiskerss";
