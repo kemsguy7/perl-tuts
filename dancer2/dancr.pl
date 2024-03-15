@@ -34,3 +34,22 @@ get '/' => sub {
         entries => $eth->fetchall_hashref('id'),
     };  
 };
+
+post '/add' => sub {
+    if ( not session('logged_in') ) {
+        send_error("Not Logged in", 401);
+    }
+
+    my $db = connect_db();
+    my $sql = 'insert into entries (title, text) values (?, ?)';
+    my $sth = $db->prepare($sql)
+        or die $db-errstr;
+
+    $sth->execute( 
+        body_parameters->get('title'),
+        body_parameters->get('text')   
+    ) or die $sth->srrstr;
+
+    set_flash('new entry posted!');
+    redirect '/';
+};
