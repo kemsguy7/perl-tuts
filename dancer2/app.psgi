@@ -10,7 +10,6 @@ return <<'HTML';
 HTML
 };
 
-
 get '/echo' => sub { 
     my $message = query_parameters->get('message');
     return "You typed in $message";
