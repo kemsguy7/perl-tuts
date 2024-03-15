@@ -1,11 +1,12 @@
 #!/usr/bin/env/perl
 
+use Dancer2; 
 #connect to database
 sub connect_db {
     my $dbh = DBI->connect("dbi:SQLite:dbname=".setting('database')) or die $DBI::errstr;
 
     return $dbh;
-}
+};
 
 #initialize database
 sub init_db {
@@ -16,10 +17,9 @@ sub init_db {
 };
 
 
-
 #Route Handlers 
 get '/' => sub { 
-    my $db = $db = connect_db();
+    my $db  = connect_db();
     my $sql = 'select, id, title, text from entries order by id desc';
 
     my $sth = $db->prepare($sql)
@@ -32,6 +32,5 @@ get '/' => sub {
         msg  => get_flash(),
         add_entry_url => uri_for('/add'),
         entries => $eth->fetchall_hashref('id'),
-    };
-     
+    };  
 };
