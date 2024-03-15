@@ -1,6 +1,17 @@
 #!/usr/bin/env/perl
 
-use Dancer2; 
+use Dancer2;
+
+#configurations and sessions 
+set 'database'        => File::Spec->catfile(File::Spec->tmpdir(), 'dancr.db');
+set 'session'         => 'Simple';
+set 'template'        => 'template_toolkit';
+set 'logger'          => 'console';
+set 'log'             => 'debug';
+set 'show_stacktrace' => 1;
+set 'startup_info'    => 1;
+
+ 
 #connect to database
 sub connect_db {
     my $dbh = DBI->connect("dbi:SQLite:dbname=".setting('database')) or die $DBI::errstr;
