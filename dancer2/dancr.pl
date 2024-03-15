@@ -31,7 +31,6 @@ sub init_db {
         or die $db->errstr;
 };
 
-
 #Route Handlers 
 get '/' => sub { 
     my $db  = connect_db();
@@ -93,3 +92,5 @@ any ['get', 'post'] => '/login' => sub {
         err => $err,
     };
 };
+
+
