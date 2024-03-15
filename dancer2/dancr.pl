@@ -94,3 +94,9 @@ any ['get', 'post'] => '/login' => sub {
 };
 
 
+get '/logout' => sub{
+    app->destroy_session;  #remove a stored session 
+    set_flash('You are logged out,');
+    redirect '/'; #route the user nabck to index page
+};
+
