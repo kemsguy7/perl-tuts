@@ -72,3 +72,24 @@ post '/add' => sub {
 };
 
 #login route
+any ['get', 'post'] => '/login' => sub {
+    my $err; 
+
+    if ( request->method() eq "POST" ) {
+        #process form input
+        if( body_parameters->('username') ne setting('username') ) {
+            $err = "Invalid username";  
+        } elsif ( body_parameters->get('password') ne setting('username') ) {
+            $err = "Invalid password";
+        } else { 
+            session 'logged_in' => true;
+            set_flash('You are logged in');
+            return redirect '/';
+        }
+    }
+
+    #display login form
+    template 'login.tt', {
+        err => $err,
+    };
+};
