@@ -11,6 +11,10 @@ set 'log'             => 'debug';
 set 'show_stacktrace' => 1;
 set 'startup_info'    => 1;
 
+#custome settings
+set 'username' => 'admin';
+set 'password' => 'password';
+
  
 #connect to database
 sub connect_db {
@@ -46,6 +50,8 @@ get '/' => sub {
     };  
 };
 
+
+#add post route 
 post '/add' => sub {
     if ( not session('logged_in') ) {
         send_error("Not Logged in", 401);
@@ -64,3 +70,5 @@ post '/add' => sub {
     set_flash('new entry posted!');
     redirect '/';
 };
+
+#login route
