@@ -12,9 +12,9 @@ set 'show_stacktrace' => 1;
 set 'startup_info'    => 1;
 
 #custome settings
+set layout => 'main';  #Tells dancer2's template engine tha that it should look for a file called main.tt in views/layouts/ 
 set 'username' => 'admin';
 set 'password' => 'password';
-
  
 #connect to database
 sub connect_db {
@@ -93,10 +93,9 @@ any ['get', 'post'] => '/login' => sub {
     };
 };
 
-
 get '/logout' => sub{
     app->destroy_session;  #remove a stored session 
     set_flash('You are logged out,');
-    redirect '/'; #route the user nabck to index page
+    redirect '/'; #route th e user nabck to index page
 };
 

@@ -1,0 +1,12 @@
+<!doctype html>
+<html> 
+<head> 
+    <title>dancr</title>
+    <link rel=stylesheet type=text/css href=[% css_url %]
+</head>
+<body> 
+    <div class=page> 
+    <h1>dancr</h1>
+    </div>
+</body>
+</html>
