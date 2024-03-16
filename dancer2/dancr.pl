@@ -1,6 +1,11 @@
 #!/usr/bin/env/perl
 
 use Dancer2;
+use DBI;
+use File::Spec;
+use File::Slurper qw/ read_text /;
+use Template;
+
 
 #configurations and sessions 
 set 'database'        => File::Spec->catfile(File::Spec->tmpdir(), 'dancr.db');
@@ -16,9 +21,23 @@ set layout => 'main';  #Tells dancer2's template engine tha that it should look 
 set 'username' => 'admin';
 set 'password' => 'password';
  
+sub set_flash { 
+    my $message = shift; 
+
+    session flash => $message;
+}
+
+sub get_flash {
+    my $msg = session('flash');
+    session->delete('flash'); 
+
+    return $msg;
+}
+
 #connect to database
 sub connect_db {
-    my $dbh = DBI->connect("dbi:SQLite:dbname=".setting('database')) or die $DBI::errstr;
+    my $dbh = DBI->connect("dbi:SQLite:dbname=".setting('database')) 
+        or die $DBI::errstr;
 
     return $dbh;
 };
@@ -29,6 +48,14 @@ sub init_db {
     my $schema = read_text('./schema.sql');
     $db->do($schema)
         or die $db->errstr;
+}
+
+hook before_template_render => sub {
+    my $tokens = shift; 
+
+    $tokens->{'css_url'}  = request-base . 'css/style.css';
+    $tokens->{'login_url'} = uri_for('/login');
+    $tokens->{'logout_url'} = uri_for('/logout');
 };
 
 #Route Handlers 
