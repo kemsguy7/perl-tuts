@@ -1,6 +1,9 @@
 #!/usr/bin/env/perl
-
+package Dancr2;
 use Dancer2;
+
+our $VERSION = '0.1';
+
 use DBI;
 use File::Spec;
 use File::Slurper qw/ read_text /;
@@ -8,7 +11,7 @@ use Template;
  
 #configurations and sessions 
 set 'database'        => File::Spec->catfile(File::Spec->tmpdir(), 'dancr.db');
-set 'session'         => 'Simple';
+set 'session'         => 'YAML';
 set 'template'        => 'template_toolkit';
 set 'logger'          => 'console';
 set 'log'             => 'debug';
