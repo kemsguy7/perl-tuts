@@ -7,6 +7,17 @@
 <body> 
     <div class=page> 
     <h1>dancr</h1>
+     <div class=metanav>
+     [% IF not session.logged_in %]
+       <a href="[% login_url %]">log in</a>
+     [% ELSE %]
+       <a href="[% logout_url %]">log out</a>
+     [% END %]
+  </div>
+  [% IF msg %]
+    <div class=flash> [% msg %] </div>
+  [% END %]
+  [% content %]
     </div>
 </body>
 </html>
