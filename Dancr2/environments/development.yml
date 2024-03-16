@@ -18,3 +18,13 @@ show_stacktrace: 1
 
 # print the banner
 startup_info: 1
+
+session: "Simple"
+
+
+plugins:                 # all plugin configuration settings go in this section
+  Database:              # the name of our plugin
+    driver: "SQLite"     # driver we want to use
+    database: "dancr.db" # where the database will go in our app
+                         # run a query when connecting to the datbase:
+    on_connect_db: [ "create table if not exists entries (id integer primary key autoincrement, title string not null, text string not null)" ]
