@@ -3,12 +3,11 @@ use Dancer2;
 use Dancer2::Plugin::Database;
  
 our $VERSION = '0.1';
- 
+
 my $flash;
  
 sub set_flash {
     my $message = shift;
- 
     $flash = $message;
 }
  
