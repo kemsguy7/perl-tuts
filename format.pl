@@ -10,10 +10,12 @@ $salary
 ===================================
 . 
 
-#defining a report header
+#defining a report header and pagination
+
 format EMPLOYEE_TOP = 
 =====================================
-Name                        Age
+Name              Age Page @<
+                     $%
 =====================================
 .
 
@@ -31,3 +33,5 @@ foreach (@n) {
     $salary = $s[$i++];
     write;
 }
+
+
